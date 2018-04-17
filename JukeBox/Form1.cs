@@ -80,7 +80,7 @@ namespace JukeBox
             // read in the number of genres from the file
             int genreNumber = Convert.ToInt32(sr.ReadLine());//converts it to string
 
-
+            //list tol hold the genres
             List<List<string>> genre = new List<List<string>>();
 
             
