@@ -17,7 +17,7 @@ namespace JukeBox
     public partial class Jukebox : Form
 
     {
-        int currentGenre = 0;
+        int currentGenre = 0; //create int for Current enre
 
 
         public Jukebox()
@@ -36,25 +36,25 @@ namespace JukeBox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Setup f2 = new Setup();
-            f2.ShowDialog();
+            Setup f2 = new Setup(); //creates new setup form
+            f2.ShowDialog(); // shows setup form
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            AboutForm f3 = new AboutForm();
-            f3.ShowDialog();
+            AboutForm f3 = new AboutForm(); //creates new About form
+            f3.ShowDialog(); //shows new About Form
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
 
-            update();
+            update(); //updates the main from
         }
 
         private void update()
         {
-            List<List<string>> genre = readFile();
+            List<List<string>> genre = readFile(); 
             GenreName.Text = genre[currentGenre][1].ToString();
 
             UpdateGenrelist();
@@ -65,25 +65,25 @@ namespace JukeBox
         private void UpdateGenrelist()
         {
             List<List<string>> genre = readFile();
-            int max = Convert.ToInt32(genre[currentGenre][0]);
+            int max = Convert.ToInt32(genre[currentGenre][0]);//converts to string
             for (int i = 0; i < max; i++)
             {
-                Genrelist.Items.Add(genre[currentGenre][i + 2]);
+                Genrelist.Items.Add(genre[currentGenre][i + 2]);//adds genre
             }
         }
 
         private List<List<string>> readFile()
         {
 
-            StreamReader sr = new StreamReader("../../Media.txt");
+            StreamReader sr = new StreamReader("../../Media.txt");//reads the Media file
 
             // read in the number of genres from the file
-            int genreNumber = Convert.ToInt32(sr.ReadLine());
+            int genreNumber = Convert.ToInt32(sr.ReadLine());//converts it to string
 
 
             List<List<string>> genre = new List<List<string>>();
 
-
+            
             for (int i = 0; i < genreNumber; i++)
             {
                 List<string> newgenre = new List<string>();
@@ -103,27 +103,27 @@ namespace JukeBox
         {
             if (Genrelist.SelectedItem != null)
             {
-                if (Playlist.Items.Count == 0 && playingNow.Text == "")
+                if (Playlist.Items.Count == 0 && playingNow.Text == "")//if playlist is empty then it sends the track straight from genrelist to playingNow
                 {
-                    playingNow.Text = Genrelist.SelectedItem.ToString();
+                    playingNow.Text = Genrelist.SelectedItem.ToString();//if playingnow is empty then adds the song and plays it
                     playTrack();
 
                 }
                 else if (Playlist.Items.Count > 0 || (Playlist.Items.Count == 0 && playingNow.Text != ""))
                 {
-                    // add to the playlist
+                    //adds to the playlist if playingnow has song playing
                     Playlist.Items.Add(Genrelist.SelectedItem.ToString());
                 }
             }
-            readFile();
+            readFile(); //reads the media file
         }
 
         private void playTrack()
         {
             // select the track, play the track
-            MediaPlayer.Ctlcontrols.stop();
-            MediaPlayer.URL = filename();
-            MediaPlayer.Ctlcontrols.play();
+            MediaPlayer.Ctlcontrols.stop();//stop track
+            MediaPlayer.URL = filename(); //where the mediaplayer plays the songs from
+            MediaPlayer.Ctlcontrols.play(); //play track
         }
 
 
@@ -131,10 +131,10 @@ namespace JukeBox
         private string filename()
         {
 
-            string filename = playingNow.Text;
-            string path = Environment.CurrentDirectory;
+            string filename = playingNow.Text; //adds the name to playingNow
+            string path = Environment.CurrentDirectory; //Gets the current directory
             string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\"));
-            string finalPath = newPath + "Tracks\\" + filename;
+            string finalPath = newPath + "Tracks\\" + filename; //the path to get the tracks
             return finalPath;
         }
 
@@ -150,13 +150,13 @@ namespace JukeBox
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            //removes played song and moves to next song in the list
             if (Playlist.Items.Count != 0)
             {
                 playingNow.Text = Playlist.Items[0].ToString();
                 Playlist.Items.RemoveAt(0);
-                playTrack();
-                timer1.Enabled = false;
+                playTrack(); //play track
+                timer1.Enabled = false; //
             }
         }
 
@@ -168,12 +168,12 @@ namespace JukeBox
                 GenreName.Text = "OST";
                 Genrelist.Items.Add("Boku No Hero Hero A.mp3");
             }
-            else if (ChooseGenre.Value == 1)
+            else if (ChooseGenre.Value == 1) //The Value = scroll bar pressed twice to show next set off genre and tracks
             {
-                Genrelist.Items.Clear();
-                GenreName.Text = "KPOP";
-                Genrelist.Items.Add("BTS DNA.mp3");
-                Genrelist.Items.Add("BTS Mic Drop Remix");
+                Genrelist.Items.Clear(); //Clears previous items so new other one can appear
+                GenreName.Text = "KPOP"; // The genre title
+                Genrelist.Items.Add("BTS DNA.mp3"); //adds track to genrelist
+                Genrelist.Items.Add("BTS Mic Drop Remix"); //Adds track to the genrelist
             }
         }
     }
@@ -181,7 +181,7 @@ namespace JukeBox
 
 
 
-
+                                 //Assignment by Zain Islam b7015095
 
 
 
