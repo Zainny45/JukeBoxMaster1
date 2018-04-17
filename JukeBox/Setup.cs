@@ -193,7 +193,7 @@ namespace JukeBox
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void genreBox_TextChanged(object sender, EventArgs e)
