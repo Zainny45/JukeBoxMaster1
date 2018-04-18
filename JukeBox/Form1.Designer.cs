@@ -154,7 +154,7 @@ namespace JukeBox
             this.Genrelist.Name = "Genrelist";
             this.Genrelist.Size = new System.Drawing.Size(243, 84);
             this.Genrelist.TabIndex = 11;
-            this.Genrelist.SelectedIndexChanged += new System.EventHandler(this.Genrelist_SelectedIndexChanged);
+           
             this.Genrelist.DoubleClick += new System.EventHandler(this.Genrelist_DoubleClick);
             // 
             // ChooseGenre
@@ -189,7 +189,7 @@ namespace JukeBox
             this.Name = "Jukebox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Juke Box v1.0";
-            this.Load += new System.EventHandler(this.Jukebox_Load);
+          
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -186,15 +186,8 @@ namespace JukeBox
         }
         
 
-        private void Genrelist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Jukebox_Load(object sender, EventArgs e)
-        {
-
-        }
+      
+       
 
         private void MediaPlayer_Enter(object sender, EventArgs e)
         {
@@ -205,7 +198,7 @@ namespace JukeBox
 
 
 
-                                 //Assignment by Zain Islam b7015095
+                                //Assignment by Zain Islam b7015095
 
 
 
