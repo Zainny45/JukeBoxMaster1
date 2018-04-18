@@ -169,7 +169,7 @@ namespace JukeBox
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            //tried a lot of things but doesnt work properly
 
 
         }
@@ -199,7 +199,7 @@ namespace JukeBox
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            //again tried a lot of things but doesnt work
         }
 
         private void button3_Click(object sender, EventArgs e) //previous genre and tracklist
