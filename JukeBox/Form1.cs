@@ -168,13 +168,26 @@ namespace JukeBox
                 GenreName.Text = "OST";
                 Genrelist.Items.Add("Boku No Hero Hero A.mp3");
             }
-            else if (ChooseGenre.Value == 1) //The Value = scroll bar pressed twice to show next set off genre and tracks
+            else if (ChooseGenre.Value == 10) //The Value = scroll bar pressed twice to show next set off genre and tracks
             {
                 Genrelist.Items.Clear(); //Clears previous items so new other one can appear
-                GenreName.Text = "KPOP"; // The genre title
+                GenreName.Text = "BTS"; // The genre title
                 Genrelist.Items.Add("BTS DNA.mp3"); //adds track to genrelist
                 Genrelist.Items.Add("BTS Mic Drop Remix"); //Adds track to the genrelist
             }
+            else if (ChooseGenre.Value == 20)
+            {
+                Genrelist.Items.Clear();
+                GenreName.Text = "EXO";
+                Genrelist.Items.Add("EXO Kokobop.mp3");
+                Genrelist.Items.Add("EXO Mama.mp3");
+            }
+        }
+        
+
+        private void Genrelist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
