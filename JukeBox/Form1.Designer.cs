@@ -140,6 +140,7 @@ namespace JukeBox
             this.MediaPlayer.TabIndex = 10;
             this.MediaPlayer.Visible = false;
             this.MediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.MediaPlayer_PlayStateChange);
+            this.MediaPlayer.Enter += new System.EventHandler(this.MediaPlayer_Enter);
             // 
             // timer1
             // 
@@ -188,6 +189,7 @@ namespace JukeBox
             this.Name = "Jukebox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Juke Box v1.0";
+            this.Load += new System.EventHandler(this.Jukebox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
