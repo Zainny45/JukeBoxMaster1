@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-
+//When application is opened the genres and tracks wont appear until you move the scrollbar and then will appear.
+//
 
 namespace JukeBox
 {
