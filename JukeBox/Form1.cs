@@ -173,7 +173,7 @@ namespace JukeBox
                 Genrelist.Items.Clear(); //Clears previous items so new other one can appear
                 GenreName.Text = "BTS"; // The genre title
                 Genrelist.Items.Add("BTS DNA.mp3"); //adds track to genrelist
-                Genrelist.Items.Add("BTS Mic Drop Remix"); //Adds track to the genrelist
+                Genrelist.Items.Add("BTS Mic Drop Remix.mp3"); //Adds track to the genrelist
             }
             else if (ChooseGenre.Value == 20)
             {
