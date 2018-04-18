@@ -160,7 +160,7 @@ namespace JukeBox
             // 
             this.ChooseGenre.LargeChange = 20;
             this.ChooseGenre.Location = new System.Drawing.Point(183, 327);
-            this.ChooseGenre.Maximum = 50;
+            this.ChooseGenre.Maximum = 60;
             this.ChooseGenre.Name = "ChooseGenre";
             this.ChooseGenre.Size = new System.Drawing.Size(243, 21);
             this.ChooseGenre.TabIndex = 12;
