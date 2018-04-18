@@ -24,7 +24,7 @@ namespace JukeBox
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();//simply closes form
+            this.Close();//simply closes form when clicking ok
         }
     }
 }
