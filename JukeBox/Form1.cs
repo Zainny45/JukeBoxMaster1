@@ -188,7 +188,7 @@ namespace JukeBox
 
         private void Genrelist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            update();
+            
         }
 
         private void Jukebox_Load(object sender, EventArgs e)
