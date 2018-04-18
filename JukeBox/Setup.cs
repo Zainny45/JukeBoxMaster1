@@ -59,12 +59,12 @@ namespace JukeBox
 
         private void update()
         {
-            List<List<string>> genre = readFile();
-            genreBox.Text = genre[currentGenre][1].ToString();
-            TrackList.Items.Clear();
+            List<List<string>> genre = readFile(); //readfile
+            genreBox.Text = genre[currentGenre][1].ToString(); //turns it into string 
+            TrackList.Items.Clear(); //clears track list
             UpdateGenrelist(genre);
         }
-        private void UpdateGenrelist(List<List<string>> genre)
+        private void UpdateGenrelist(List<List<string>> genre) 
         {
             int max = Convert.ToInt32(genre[currentGenre][0]);
             for (int i = 0; i < max; i++)
@@ -85,7 +85,7 @@ namespace JukeBox
                 bool_Requires_Saving = true;
                 OpenFileDialog newDialogue = new OpenFileDialog();
                 newDialogue.Title = "Import Track";
-                newDialogue.Filter = "Music files (*.mp3, *.wma) | *.mp3; *.wma";
+                newDialogue.Filter = "Music files (*.mp3, *.wma) | *.mp3; *.wma";//Only will import mp3 and wma files
                 if (newDialogue.ShowDialog() == DialogResult.OK)
                 {
                     Imported_tracks.Items.Add(newDialogue.SafeFileName.ToString());
@@ -98,15 +98,15 @@ namespace JukeBox
 
 
 
-
+        //code if you click cancel. 
         private void button11_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you want to cancel?";
-            string error = "Close";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            string message = "Are you sure you want to cancel?"; //message
+            string error = "Close";//name
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo; //buttons saying yes and no
             DialogResult result;
             result = MessageBox.Show(message, error, buttons);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (result == System.Windows.Forms.DialogResult.Yes) //if yes clicked then closes setup form and if no is pressed then only closes the popup
             {
                 this.Close();
             }
@@ -116,17 +116,17 @@ namespace JukeBox
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Imported_tracks.Items.Clear();
+            Imported_tracks.Items.Clear();//clears the imported tracks
         }
 
 
         private void Imported_tracks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<string> imported_tracks = new List<string>();
+            List<string> imported_tracks = new List<string>(); //list to hold the imported tracks
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)//if a imported track is clicked on and then the move button pressed it will move it to the tracklist from imported tracks and deletes it from imported tracks
         {
             if (Imported_tracks.Text != "")
             {
@@ -137,11 +137,11 @@ namespace JukeBox
                 Imported_tracks.Items.Remove(MovedItem);
             }
             else
-                MessageBox.Show("You Must Select an Item To Move");
+                MessageBox.Show("You Must Select an Item To Move"); //message if nothing is selected
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)//deletes the tracks from the tracklist
         {
             ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(TrackList);
             selectedItems = TrackList.SelectedItems;
@@ -156,7 +156,7 @@ namespace JukeBox
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)//copies the imported tracks to tracklist but does not delete from imported tracks
         {
             if (Imported_tracks.Text != "")
             {
@@ -169,18 +169,14 @@ namespace JukeBox
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string applicationPath = Directory.GetCurrentDirectory() + "//";
-
-            StreamWriter myOutputStream = File.CreateText(applicationPath + (genreBox.Text) + ".txt");
-
-            myOutputStream.Close();
+            
 
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //next genre and tracklist
         {
-            StreamReader sr = new StreamReader("../../Media.txt");
+            StreamReader sr = new StreamReader("../../Media.txt"); //file location to streamreader
             int genreNumber = Convert.ToInt32(sr.ReadLine());
 
             if (currentGenre < genreNumber - 1)
@@ -206,7 +202,7 @@ namespace JukeBox
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //previous genre and tracklist
         {
             StreamReader sr = new StreamReader("../../Media.txt");
             int genreNumber = Convert.ToInt32(sr.ReadLine());
